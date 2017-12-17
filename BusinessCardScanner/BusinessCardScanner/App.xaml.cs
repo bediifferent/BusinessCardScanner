@@ -28,6 +28,7 @@ namespace BusinessCardScanner
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<DetailPage>();
         }
     }
 }

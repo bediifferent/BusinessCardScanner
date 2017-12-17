@@ -15,7 +15,7 @@ namespace BusinessCardScanner.ViewModels
             _navigationService = navigationService;
             _userDataWrapper = userDataWrapper;
             SaveCommand = new DelegateCommand(async () => await SaveCommandHandler());
-            SaveCommand = new DelegateCommand(async () => await CancelCommandHandler());
+            CancelCommand = new DelegateCommand(async () => await CancelCommandHandler());
         }
 
         public DelegateCommand SaveCommand { get; set; }

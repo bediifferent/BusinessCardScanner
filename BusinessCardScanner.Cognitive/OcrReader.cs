@@ -15,9 +15,9 @@ namespace BusinessCardScanner.Cognitive
             OcrData data = await GetOCRData(fileContent).ConfigureAwait(false);
             ContactCard contact = new ContactCard();
             Region region = data.Regions[0];
-            contact.Name = string.Join(" ", region.Lines[0].Words.Select(a => a.Text));
-            contact.Company = string.Join(" ", region.Lines[1].Words.Select(a => a.Text));
-            contact.Position = string.Join(" ", region.Lines[2].Words.Select(a => a.Text));
+            contact.Name = region.Lines.Count > 0 ? string.Join(" ", region.Lines[0].Words.Select(a => a.Text)) : string.Empty;
+            contact.Company = region.Lines.Count > 1 ? string.Join(" ", region.Lines[1].Words.Select(a => a.Text)) : string.Empty;
+            contact.Position = region.Lines.Count > 2 ? string.Join(" ", region.Lines[2].Words.Select(a => a.Text)) : string.Empty;
             contact.PhoneNo = GetFromRegex(region, Constants.RegexPatterns.Phone);
             contact.Email = GetFromRegex(region, Constants.RegexPatterns.Email);
             contact.Website = GetFromRegex(region, Constants.RegexPatterns.Website, Constants.RegexPatterns.WebsiteFacebook);
@@ -37,7 +37,7 @@ namespace BusinessCardScanner.Cognitive
                 content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(Constants.OctetStreamHeader);
                 response = await client.PostAsync(Constants.CognitiveUrl, content).ConfigureAwait(false);
             }
-           return JsonConvert.DeserializeObject<OcrData>(await response.Content.ReadAsStringAsync());
+            return JsonConvert.DeserializeObject<OcrData>(await response.Content.ReadAsStringAsync());
         }
 
         private static string GetFromRegex(Region r, string pattern, string notContains = null)

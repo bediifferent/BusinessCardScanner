@@ -3,44 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusinessCardScanner.Views.MainPage"
              Title="{Binding Title}">
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <ListView ItemsSource="{Binding Contacts}">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <ViewCell.View>
-                            <StackLayout>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition/>
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition />
-                                    </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Grid.Row="0" Text="{Binding Name, StringFormat='Name : {0}'}"/>
-                                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding Company, StringFormat='Company : {0}'}"/>
-                                    <Label Grid.Column="0" Grid.Row="2" Text="{Binding Position, StringFormat='Position : {0}'}"/>
-                                    <Label Grid.Column="0" Grid.Row="3" Text="{Binding PhoneNo, StringFormat='PhoneNo : {0}'}"/>
-                                    <Label Grid.Column="0" Grid.Row="4" Text="{Binding Email, StringFormat='Email : {0}'}"/>
-                                    <Label Grid.Column="0" Grid.Row="5" Text="{Binding Website, StringFormat='Website : {0}'}"/>
-                                    <Label Grid.Column="0" Grid.Row="6" Text="{Binding Facebook, StringFormat='Facebook : {0}'}"/>
-                                    <Label Grid.Column="0" Grid.Row="7" Text="{Binding Twitter, StringFormat='Twitter : {0}'}"/>
-                                </Grid>
-                                <BoxView HeightRequest="1" Opacity="0.5" Color="Gray" />
-                            </StackLayout>
-                        </ViewCell.View>
+                        <StackLayout>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" FontSize="Medium" Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Label Grid.Row="1" FontSize="Medium" Text="{Binding Company}"/>
+                                <Label Grid.Row="2" FontSize="Medium" Text="{Binding Email}" TextColor="DarkGray"/>
+                            </Grid>
+                            <BoxView HeightRequest="1" Opacity="0.5" Color="Gray" />
+                        </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Take Photo" Command="{Binding TakePhotoCommand}"/>
-    </StackLayout>
+        <Button Grid.Row="1" Text="Add" BackgroundColor="ForestGreen" TextColor="White" Command="{Binding TakePhotoCommand}"/>
+    </Grid>
 
 </ContentPage>

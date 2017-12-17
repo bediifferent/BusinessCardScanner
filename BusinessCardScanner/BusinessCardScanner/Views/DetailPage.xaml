@@ -7,11 +7,11 @@
         <Grid.Resources>
             <ResourceDictionary>
                 <Style TargetType="Label">
-                    <Setter Property="VerticalOptions" Value="EndAndExpand"/>
-                    <Setter Property="VerticalTextAlignment" Value="End"/>
+                    <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                    <Setter Property="VerticalTextAlignment" Value="Center"/>
                 </Style>
                 <Style TargetType="Entry">
-                    <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+                    <Setter Property="VerticalOptions" Value="Center"/>
                 </Style>
             </ResourceDictionary>
         </Grid.Resources>

@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Linq;
+using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BusinessCardScanner.Cognitive.Common;
@@ -14,9 +15,9 @@ namespace BusinessCardScanner.Cognitive
             OcrData data = await GetOCRData(fileContent).ConfigureAwait(false);
             ContactCard contact = new ContactCard();
             Region region = data.Regions[0];
-            //contact.Name = GetName(region);
-            //contact.Company = GetCompany(region);
-            //contact.Position = GetPosition(region);
+            contact.Name = string.Join(" ", region.Lines[0].Words.Select(a => a.Text));
+            contact.Company = string.Join(" ", region.Lines[1].Words.Select(a => a.Text));
+            contact.Position = string.Join(" ", region.Lines[2].Words.Select(a => a.Text));
             contact.PhoneNo = GetFromRegex(region, Constants.RegexPatterns.Phone);
             contact.Email = GetFromRegex(region, Constants.RegexPatterns.Email);
             contact.Website = GetFromRegex(region, Constants.RegexPatterns.Website, Constants.RegexPatterns.WebsiteFacebook);

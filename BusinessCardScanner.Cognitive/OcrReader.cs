@@ -8,9 +8,9 @@ using Newtonsoft.Json;
 
 namespace BusinessCardScanner.Cognitive
 {
-    public class OcrReader
+    public static class OcrReader
     {
-        public async Task<ContactCard> ReadBusinessCard(byte[] fileContent)
+        public static async Task<ContactCard> ReadBusinessCard(byte[] fileContent)
         {
             OcrData data = await GetOCRData(fileContent).ConfigureAwait(false);
             ContactCard contact = new ContactCard();
@@ -27,7 +27,7 @@ namespace BusinessCardScanner.Cognitive
             return contact;
         }
 
-        private async Task<OcrData> GetOCRData(byte[] fileContent)
+        private static async Task<OcrData> GetOCRData(byte[] fileContent)
         {
             var client = new HttpClient();
             client.DefaultRequestHeaders.Add(Constants.CognitiveKeyHeader, Constants.CognitiveKey);
@@ -40,7 +40,7 @@ namespace BusinessCardScanner.Cognitive
            return JsonConvert.DeserializeObject<OcrData>(await response.Content.ReadAsStringAsync());
         }
 
-        private string GetFromRegex(Region r, string pattern, string notContains = null)
+        private static string GetFromRegex(Region r, string pattern, string notContains = null)
         {
             foreach (Line l in r.Lines)
             {

@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using BusinessCardScanner.Cognitive.Resources;
 
 namespace BusinessCardScanner.Cognitive.Entities
 {
@@ -16,15 +17,14 @@ namespace BusinessCardScanner.Cognitive.Entities
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Name: " + Name);
-            sb.AppendLine("Company: " + Company);
-            sb.AppendLine("Position: " + Position);
-            sb.AppendLine("Phone: " + PhoneNo);
-            sb.AppendLine("Email: " + Email);
-            sb.AppendLine("Website: " + Website);
-            sb.AppendLine("Facebook: " + Facebook);
-            sb.AppendLine("Twitter: " + Twitter);
-
+            sb.AppendLine(string.Format(Titles.Name, Name));
+            sb.AppendLine(string.Format(Titles.Company, Company));
+            sb.AppendLine(string.Format(Titles.Position, Position));
+            sb.AppendLine(string.Format(Titles.Phone, PhoneNo));
+            sb.AppendLine(string.Format(Titles.Email, Email));
+            sb.AppendLine(string.Format(Titles.Website, Website));
+            sb.AppendLine(string.Format(Titles.Facebook, Facebook));
+            sb.AppendLine(string.Format(Titles.Twitter, Twitter));
             return sb.ToString();
         }
     }

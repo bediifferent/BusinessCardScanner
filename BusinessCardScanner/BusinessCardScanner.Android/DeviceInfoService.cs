@@ -2,6 +2,7 @@
 using System.IO;
 using BusinessCardScanner.Droid;
 using BusinessCardScanner.Services.Interfaces;
+using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(DeviceInfoService))]

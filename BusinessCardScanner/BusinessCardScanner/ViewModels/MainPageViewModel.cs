@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using System;
+using Prism.Navigation;
 using System.Threading.Tasks;
 using BusinessCardScanner.Cognitive;
 using BusinessCardScanner.Services.Interfaces;
@@ -43,9 +44,17 @@ namespace BusinessCardScanner.ViewModels
             await _pageDialogService.DisplayAlertAsync("File Location", file.Path, "OK");
 
             var stream = DependencyService.Get<IDeviceInfoService>().GetFileStream(file);
-
-            var abc = await OcrReader.ReadBusinessCard(stream);
-
+            try
+            {
+                var abc = await OcrReader.ReadBusinessCard(stream);
+                await _pageDialogService.DisplayAlertAsync("Error", abc.Name, "Ok", "Cancel");
+                
+            }
+            catch (Exception e)
+            {
+                await _pageDialogService.DisplayAlertAsync("Error", e.Message, "Ok", "Cancel");
+            }
+            
             //image.Source = ImageSource.FromStream(() =>
             //{
             //    var stream = file.GetStream();

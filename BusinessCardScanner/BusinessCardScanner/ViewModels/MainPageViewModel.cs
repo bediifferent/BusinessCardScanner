@@ -16,13 +16,15 @@ namespace BusinessCardScanner.ViewModels
     {
         private readonly IPageDialogService _pageDialogService;
         private readonly IUserDataWrapper _userDataWrapper;
+        private readonly INavigationService _navigationService;
         private ObservableCollection<ContactCard> _contacts;
 
-        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IUserDataWrapper userDataWrapper) : base (navigationService)
+        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IUserDataWrapper userDataWrapper) : base(navigationService)
         {
             _pageDialogService = pageDialogService;
             _userDataWrapper = userDataWrapper;
-            TakePhotoCommand = new DelegateCommand(async ()=> await TakePhotoCommandHandler());
+            _navigationService = navigationService;
+            TakePhotoCommand = new DelegateCommand(async () => await TakePhotoCommandHandler());
         }
 
         public ObservableCollection<ContactCard> Contacts
@@ -67,8 +69,13 @@ namespace BusinessCardScanner.ViewModels
                 }
 
                 var stream = DependencyService.Get<IDeviceInfoService>().GetFileStream(file);
-               
-                _userDataWrapper.Insert(await OcrReader.ReadBusinessCard(stream));
+
+                var card = await OcrReader.ReadBusinessCard(stream);
+                var parameters = new NavigationParameters
+                {
+                    { "CardDetails", card }
+                };
+                await _navigationService.NavigateAsync("DetailPage", parameters);
             }
             catch (Exception e)
             {

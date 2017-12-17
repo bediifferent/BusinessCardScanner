@@ -59,8 +59,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Text="Save" Grid.Column="0" />
-            <Button Text="Cancel" Grid.Column="1"/>
+            <Button Text="Save" BackgroundColor="ForestGreen" TextColor="White" Grid.Column="0" Command="{Binding SaveCommand}"/>
+            <Button Text="Cancel" BackgroundColor="Red" TextColor="White" Grid.Column="1" Command="{Binding CancelCommand}"/>
         </Grid>
     </Grid>
 </ContentPage>

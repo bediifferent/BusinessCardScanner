@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessCardScanner.Views.DetailPage"
+             Title="Details">
+    <Grid Padding="10">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Label">
+                    <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                    <Setter Property="VerticalTextAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="Entry">
+                    <Setter Property="VerticalOptions" Value="Center"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="Name" Grid.Row="0" Grid.Column="0"/>
+        <Entry Text="{Binding ContactDetails.Name}" Grid.Row="0" Grid.Column="1"/>
+
+        <Label Text="Company" Grid.Row="1" Grid.Column="0"/>
+        <Entry Text="{Binding ContactDetails.Company}" Grid.Row="1" Grid.Column="1"/>
+
+        <Label Text="Position" Grid.Row="2" Grid.Column="0"/>
+        <Entry Text="{Binding ContactDetails.Position}" Grid.Row="2" Grid.Column="1"/>
+
+        <Label Text="PhoneNo" Grid.Row="3" Grid.Column="0"/>
+        <Entry Text="{Binding ContactDetails.PhoneNo}" Grid.Row="3" Grid.Column="1"/>
+
+        <Label Text="Email" Grid.Row="4" Grid.Column="0"/>
+        <Entry Text="{Binding ContactDetails.Email}" Grid.Row="4" Grid.Column="1"/>
+
+        <Label Text="Website" Grid.Row="5" Grid.Column="0"/>
+        <Entry Text="{Binding ContactDetails.Website}" Grid.Row="5" Grid.Column="1"/>
+
+        <Label Text="Facebook" Grid.Row="6" Grid.Column="0"/>
+        <Entry Text="{Binding ContactDetails.Facebook}" Grid.Row="6" Grid.Column="1"/>
+
+        <Label Text="Twitter" Grid.Row="7" Grid.Column="0"/>
+        <Entry Text="{Binding ContactDetails.Twitter}" Grid.Row="7" Grid.Column="1"/>
+        
+        <Grid Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Save" BackgroundColor="ForestGreen" TextColor="White" Grid.Column="0" Command="{Binding SaveCommand}"/>
+            <Button Text="Cancel" BackgroundColor="Red" TextColor="White" Grid.Column="1" Command="{Binding CancelCommand}"/>
+        </Grid>
+    </Grid>
+</ContentPage>

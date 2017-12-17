@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessCardScanner.Views.MainPage"
+             Title="{Binding Title}">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" FontSize="Medium" Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Label Grid.Row="1" FontSize="Medium" Text="{Binding Company}"/>
+                                <Label Grid.Row="2" FontSize="Medium" Text="{Binding Email}" TextColor="DarkGray"/>
+                            </Grid>
+                            <BoxView HeightRequest="1" Opacity="0.5" Color="Gray" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="1" Text="Add" BackgroundColor="ForestGreen" TextColor="White" Command="{Binding TakePhotoCommand}"/>
+    </Grid>
+
+</ContentPage>

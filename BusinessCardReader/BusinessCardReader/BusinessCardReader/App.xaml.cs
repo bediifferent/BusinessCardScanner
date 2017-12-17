@@ -1,6 +1,4 @@
-﻿using BusinessCardReader.ViewModels;
-using BusinessCardReader.Views;
-using Microsoft.Practices.Unity;
+﻿using BusinessCardReader.Views;
 using Prism.Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

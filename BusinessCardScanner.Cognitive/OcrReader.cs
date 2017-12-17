@@ -12,18 +12,18 @@ namespace BusinessCardScanner.Cognitive
         public async Task<ContactCard> ReadBusinessCard(byte[] fileContent)
         {
             OcrData data = await GetOCRData(fileContent).ConfigureAwait(false);
-            ContactCard cc = new ContactCard();
-            Region r = data.Regions[0];
-            //cc.Name = GetName(r);
-            //cc.Company = GetCompany(r);
-            //cc.Position = GetPosition(r);
-            cc.PhoneNo = GetFromRegex(r, @"^d+$");
-            cc.Email = GetFromRegex(r, @"^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$");
-            cc.Website = GetFromRegex(r, "^www.", "facebook");
-            cc.Facebook = GetFromRegex(r, @"^www.Facebook.com");
-            cc.Twitter = GetFromRegex(r, "^@");
+            ContactCard contact = new ContactCard();
+            Region region = data.Regions[0];
+            //contact.Name = GetName(region);
+            //contact.Company = GetCompany(region);
+            //contact.Position = GetPosition(region);
+            contact.PhoneNo = GetFromRegex(region, Constants.RegexPatterns.Phone);
+            contact.Email = GetFromRegex(region, Constants.RegexPatterns.Email);
+            contact.Website = GetFromRegex(region, Constants.RegexPatterns.Website, Constants.RegexPatterns.WebsiteFacebook);
+            contact.Facebook = GetFromRegex(region, Constants.RegexPatterns.Facebook);
+            contact.Twitter = GetFromRegex(region, Constants.RegexPatterns.Twitter);
 
-            return cc;
+            return contact;
         }
 
         private async Task<OcrData> GetOCRData(byte[] fileContent)

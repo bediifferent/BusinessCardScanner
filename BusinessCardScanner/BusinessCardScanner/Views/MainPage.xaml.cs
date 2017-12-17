@@ -6,7 +6,7 @@ namespace BusinessCardScanner.Views
 	{
 		public MainPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 	}
 }

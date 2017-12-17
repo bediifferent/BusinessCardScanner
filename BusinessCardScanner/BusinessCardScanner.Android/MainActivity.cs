@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Microsoft.Practices.Unity;
+using Plugin.Permissions;
 using Prism.Unity;
 
 namespace BusinessCardScanner.Droid
@@ -18,6 +19,11 @@ namespace BusinessCardScanner.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 

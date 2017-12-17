@@ -1,4 +1,5 @@
 ﻿using BusinessCardScanner.Views;
+using Microsoft.Practices.Unity;
 using Prism.Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -28,6 +29,7 @@ namespace BusinessCardScanner
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterType<IUserDataWrapper, UserDataWrapper>(new ContainerControlledLifetimeManager());
             Container.RegisterTypeForNavigation<DetailPage>();
         }
     }

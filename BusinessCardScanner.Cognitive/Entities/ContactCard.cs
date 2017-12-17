@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using BusinessCardScanner.Cognitive.Resources;
 
 namespace BusinessCardScanner.Cognitive.Entities
 {

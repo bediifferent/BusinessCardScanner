@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using BusinessCardScanner.Cognitive;
 using BusinessCardScanner.Services.Interfaces;
 using Plugin.Media;
+using Prism.Commands;
 using Prism.Services;
 using DependencyService = Xamarin.Forms.DependencyService;
 

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using BusinessCardScanner.Droid;
-using Microsoft.Practices.Unity;
-using Plugin.Media.Abstractions;
+using BusinessCardScanner.Services.Interfaces;
+using Xamarin.Forms;
 
 [assembly: Dependency(typeof(DeviceInfoService))]
 namespace BusinessCardScanner.Droid

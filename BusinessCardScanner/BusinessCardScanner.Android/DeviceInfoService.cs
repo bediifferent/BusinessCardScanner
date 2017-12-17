@@ -31,5 +31,10 @@ namespace BusinessCardScanner.Droid
             }
             return null;
         }
+        public string CreateCommonDatabase()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), Constants.SharedSQLiteDBName);
+        }
+
     }
 }

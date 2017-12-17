@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessCardScanner.Android", "BusinessCardScanner\BusinessCardScanner.Android\BusinessCardScanner.Android.csproj", "{602F8EDF-2FBD-429F-8296-252CFE0A95C6}"
 EndProject
@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessCardScanner.iOS", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessCardScanner.UWP", "BusinessCardScanner\BusinessCardScanner.UWP\BusinessCardScanner.UWP.csproj", "{B5842546-0D0A-4F2B-8FC8-C2AE3255908D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessCardScanner", "BusinessCardScanner\BusinessCardScanner\BusinessCardScanner.csproj", "{1ED9584A-3155-404E-9104-A5B60E2F5589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessCardScanner", "BusinessCardScanner\BusinessCardScanner\BusinessCardScanner.csproj", "{1ED9584A-3155-404E-9104-A5B60E2F5589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessCardScanner.Cognitive", "BusinessCardScanner.Cognitive\BusinessCardScanner.Cognitive.csproj", "{EEABBD19-B002-4BCD-A476-17BF306C9813}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -251,6 +253,54 @@ Global
 		{1ED9584A-3155-404E-9104-A5B60E2F5589}.Release|x64.Build.0 = Release|Any CPU
 		{1ED9584A-3155-404E-9104-A5B60E2F5589}.Release|x86.ActiveCfg = Release|Any CPU
 		{1ED9584A-3155-404E-9104-A5B60E2F5589}.Release|x86.Build.0 = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|ARM.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|ARM.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|x64.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|x64.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|x86.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Ad-Hoc|x86.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|ARM.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|ARM.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|x64.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|x64.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|x86.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.AppStore|x86.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|ARM.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|x64.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Debug|x86.Build.0 = Debug|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|ARM.ActiveCfg = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|ARM.Build.0 = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|iPhone.Build.0 = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|x64.ActiveCfg = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|x64.Build.0 = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|x86.ActiveCfg = Release|Any CPU
+		{EEABBD19-B002-4BCD-A476-17BF306C9813}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
